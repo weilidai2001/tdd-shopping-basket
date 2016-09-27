@@ -1,13 +1,11 @@
-const itemPriceList = require("./items-price-list");
-
-const Basket = function() {
+const Basket = function(priceCalculator) {
   const itemsInBasket = [];
 
   this.addItemToBasket = item => itemsInBasket.push(item);
 
-  this.calculateTotalPrice = () => itemsInBasket
-    .map(item => itemPriceList.getPriceByItemName(item.name))
-    .reduce((previous, current) => previous + current);
+  this.getItemsInBasket = () => itemsInBasket;
+
+  this.calculateTotalPrice = () => priceCalculator.calculateTotalPrice(this);
 };
 
 module.exports = Basket;
