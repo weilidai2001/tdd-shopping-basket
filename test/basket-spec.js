@@ -24,7 +24,17 @@ describe("Basket senarios", function () {
     basket.calculateTotalPrice().should.equal(1);
   });
 
-  it("should calculate the total cost of items that three for the price of two applies more than once");
+  it("should calculate the total cost of items that three for the price of two applies more than once", function(){
+    const basket = new Basket(priceCalculator);
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+
+    basket.calculateTotalPrice().should.equal(2);
+  });
 
   it("should calculate the total cost of items that are a mixture of discounted and non-discounted");
 
