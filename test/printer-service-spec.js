@@ -12,6 +12,7 @@ describe("Displaying results", function () {
       "orange x 1",
       "garlic x 1",
       "------------",
+      "discount: -£0.50",
       "total: £0.70"
     ].join("\n");
 
@@ -25,5 +26,27 @@ describe("Displaying results", function () {
     printerService.generateReceiptAsString(basket).should.equal(expectedOutput);
   });
 
-  it("should display items including items that has discounts");
+  it("should display items including items that has discounts", function(){
+    const expectedOutput = [
+      "apple x 1",
+      "orange x 1",
+      "garlic x 1",
+      "papaya x 3",
+      "------------",
+      "discount: -£0.50",
+      "total: £1.70"
+    ].join("\n");
+
+    const printerService = new PrinterService(priceCalculatorService);
+
+    const basket = new Basket();
+    basket.addItemToBasket({name: "apple"});
+    basket.addItemToBasket({name: "orange"});
+    basket.addItemToBasket({name: "garlic"});
+    basket.addItemToBasket({name: "papaya"});
+    basket.addItemToBasket({name: "papaya"});
+    basket.addItemToBasket({name: "papaya"});
+
+    printerService.generateReceiptAsString(basket).should.equal(expectedOutput);
+  });
 });
