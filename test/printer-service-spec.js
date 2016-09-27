@@ -8,9 +8,9 @@ const priceCalculatorService = require("../src/price-calculator-service.js");
 describe("Displaying results", function () {
   it("should display items with no discount", function(){
     const expectedOutput = [
-      "apple x 1",
-      "orange x 1",
-      "garlic x 1",
+      "apple x 1 £0.25",
+      "orange x 1 £0.30",
+      "garlic x 1 £0.15",
       "------------",
       "discount: -£0.00",
       "total: £0.70"
@@ -28,10 +28,10 @@ describe("Displaying results", function () {
 
   it("should display items including items that has discounts", function(){
     const expectedOutput = [
-      "apple x 1",
-      "orange x 1",
-      "garlic x 1",
-      "papaya x 3",
+      "apple x 1 £0.25",
+      "orange x 1 £0.30",
+      "garlic x 1 £0.15",
+      "papaya x 3 £1.50",
       "------------",
       "discount: -£0.50",
       "total: £1.70"
