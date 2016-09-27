@@ -15,8 +15,8 @@ describe("Basket senarios", function () {
     basket.calculateTotalPrice().should.equal(0.7);
   });
 
-  it.skip("should calculate the total cost of items that are three for the price of two", function(){
-    const basket = new Basket();
+  it("should calculate the total cost of items that are three for the price of two", function(){
+    const basket = new Basket(priceCalculator);
     basket.addItemToBasket({name: "papaya"}); // 50p
     basket.addItemToBasket({name: "papaya"}); // 50p
     basket.addItemToBasket({name: "papaya"}); // 50p
