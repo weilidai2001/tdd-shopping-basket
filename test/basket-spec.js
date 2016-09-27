@@ -13,7 +13,14 @@ describe("Basket senarios", function () {
     basket.calculateTotalPrice().should.equal(0.25 + 0.3 + 0.15);
   });
 
-  it("should calculate the total cost of items that are three for the price of two");
+  it("should calculate the total cost of items that are three for the price of two", function(){
+    const basket = new Basket();
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+
+    basket.calculateTotalPrice().should.equal(0.5 + 0.5);
+  });
 
   it("should calculate the total cost of items that three for the price of two applies more than once");
 
