@@ -5,7 +5,7 @@ const Basket = require("../src/basket.js");
 const priceCalculator = require("../src/price-calculator.js");
 
 
-describe("Basket senarios", function () {
+describe("Calculating totals", function () {
   it("should calculate the total cost of items that are not on sale", function(){
     const basket = new Basket(priceCalculator);
     basket.addItemToBasket({name: "apple"}); // 25p
@@ -51,4 +51,10 @@ describe("Basket senarios", function () {
     basket.calculateTotalPrice().should.equal(2.70);
   });
 
+});
+
+describe("Displaying results", function () {
+  it("should display items with no discount");
+
+  it("should display items including items that has discounts");
 });
