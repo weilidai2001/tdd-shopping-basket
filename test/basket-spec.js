@@ -36,6 +36,19 @@ describe("Basket senarios", function () {
     basket.calculateTotalPrice().should.equal(2);
   });
 
-  it("should calculate the total cost of items that are a mixture of discounted and non-discounted");
+  it("should calculate the total cost of items that are a mixture of discounted and non-discounted", function(){
+    const basket = new Basket(priceCalculator);
+    basket.addItemToBasket({name: "apple"}); // 25p
+    basket.addItemToBasket({name: "orange"}); // 30p
+    basket.addItemToBasket({name: "garlic"}); // 15p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+    basket.addItemToBasket({name: "papaya"}); // 50p
+
+    basket.calculateTotalPrice().should.equal(2.70);
+  });
 
 });
