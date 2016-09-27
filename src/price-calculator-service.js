@@ -15,5 +15,6 @@ module.exports = {
 
     return roundCurrencyToTwoDigit(total - discounts);
   },
-  calculateTotalDiscount: discountRules.calculateTotalDiscount
+  calculateTotalDiscount: discountRules.calculateTotalDiscount,
+  calculateSubtotalByItem: (name, quantity) => itemPriceList.getPriceByItemName(name) * quantity
 };

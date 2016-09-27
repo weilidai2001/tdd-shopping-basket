@@ -4,7 +4,7 @@ module.exports = function(priceCalculatorService) {
   this.generateReceiptAsString = function(basket) {
     const itemisedList = _(basket.getItemsInBasket())
       .countBy('name')
-      .map((quantity, name) => `${name} x ${quantity}`)
+      .map((quantity, name) => `${name} x ${quantity} £${priceCalculatorService.calculateSubtotalByItem(name, quantity).toFixed(2)}`)
       .value();
 
     const linebreak = "------------";
