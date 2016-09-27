@@ -1,6 +1,7 @@
 'use strict';
 
 const should = require("chai").should();
+const Basket = require("../src/basket.js");
 
 describe("Basket senarios", function () {
   it("should calculate the total cost of items that are not on sale", function(){
