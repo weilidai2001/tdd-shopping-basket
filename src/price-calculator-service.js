@@ -14,5 +14,6 @@ module.exports = {
     const discounts = discountRules.calculateTotalDiscount(basket);
 
     return roundCurrencyToTwoDigit(total - discounts);
-  }
+  },
+  calculateTotalDiscount: discountRules.calculateTotalDiscount
 };

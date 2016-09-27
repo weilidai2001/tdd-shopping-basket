@@ -12,7 +12,7 @@ describe("Displaying results", function () {
       "orange x 1",
       "garlic x 1",
       "------------",
-      "discount: -£0.50",
+      "discount: -£0.00",
       "total: £0.70"
     ].join("\n");
 

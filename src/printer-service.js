@@ -9,10 +9,13 @@ module.exports = function(priceCalculatorService) {
 
     const linebreak = "------------";
 
+    const discount = `discount: -£${priceCalculatorService.calculateTotalDiscount(basket).toFixed(2)}`;
+
     const total = `total: £${priceCalculatorService.calculateTotalPrice(basket).toFixed(2)}`;
 
     return itemisedList
       .concat([linebreak])
+      .concat([discount])
       .concat([total])
       .join("\n");
   }
