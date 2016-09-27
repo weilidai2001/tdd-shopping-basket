@@ -3,7 +3,14 @@
 const should = require("chai").should();
 
 describe("Basket senarios", function () {
-  it("should calculate the total cost of items that are not on sale");
+  it("should calculate the total cost of items that are not on sale", function(){
+    const basket = new Basket();
+    basket.addItemToBasket({name: "apple"}); // 25p
+    basket.addItemToBasket({name: "orange"}); // 30p
+    basket.addItemToBasket({name: "garlic"}); // 15p
+
+    basket.calculateTotalPrice().should.equal(0.25 + 0.3 + 0.15);
+  });
 
   it("should calculate the total cost of items that are three for the price of two");
 
